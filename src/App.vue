@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { EstablishmentsRepository } from './data/repository/impl/EstablishmentsRepository';
-import ApiClient, { Api } from './infrastructure/data/ApiClient';
-import type { EstablishmentsApi } from './client';
-
-onMounted(async () => {
-  const res = await new EstablishmentsRepository().getAll()
-  console.log(res)
-})
+import HomeView from './views/home/HomeView.vue';
 </script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <HomeView />
+  <!-- <h1>Hello App!</h1>
+  <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
+  <nav>
+    <RouterLink to="/">Go to Home</RouterLink>
+    <RouterLink to="/about">Go to About</RouterLink>
+  </nav>
+  <main>
+    <RouterView />
+  </main> -->
 </template>
 
 <style scoped></style>
