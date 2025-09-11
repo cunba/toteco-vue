@@ -1,17 +1,32 @@
-.header-text {
-  color: var(--v-theme-text_touchable);
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.header-link {
-  color: var(--v-theme-text_touchable);
+.header-link-text {
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   transition: opacity 0.2s ease;
+  padding: 2px;
 }
 
 .header-link:hover {
   opacity: 0.7;
+  background-color: var(--v-theme-background_second);
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+.header-actions-right {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.header-actions-left {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
 }

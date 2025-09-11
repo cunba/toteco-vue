@@ -1,6 +1,11 @@
 {
     "login": "Login",
     "sign_up": "Sign up",
+    "loading": "Loading...",
 
-    "home.title": "HOME"
+    "home.title": "Home",
+    "home.no_data": "No data",
+    "home.no_data.message": "Come back later or add your first publication 🍝",
+
+    "establishments.title": "Establishments"
 }

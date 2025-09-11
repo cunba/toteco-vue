@@ -1,7 +1,13 @@
 import { createVuetify } from 'vuetify'
-import { PALLET } from './Colors'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import 'vuetify/styles'
+import { PALLET } from '../../../config/Colors'
 
-export default createVuetify({
+const vuetify = createVuetify({
+    ssr: true,
+    components,
+    directives,
     theme: {
         defaultTheme: 'light',
         themes: {
@@ -38,3 +44,5 @@ export default createVuetify({
         }
     }
 })
+
+export default vuetify

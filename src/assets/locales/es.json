@@ -1,6 +1,11 @@
 {
     "login": "Inicio sesión",
     "sign_up": "Registro",
+    "loading": "Cargando...",
 
-    "home.title": "HOME"
+    "home.title": "Home",
+    "home.no_data": "No hay datos",
+    "home.no_data.message": "Vuelve más tarde o añade tu primera publicación 🍝",
+
+    "establishments.title": "Establecimientos"
 }
