@@ -24,8 +24,6 @@ onMounted(async () => {
                     item.products
                 )
         )
-
-        console.log(publications.value)
 })
 
 </script>
