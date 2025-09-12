@@ -36,12 +36,12 @@ watch(group, () => {
     <v-container fluid>
       <v-row align="center" class="h-100">
         <div class="header-actions-left">
-          <div v-if="props.drawerItems.length > 0">
+          <div v-if="drawerItems.length > 0">
             <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
               :color="theme.current.value.colors.text_touchable"></v-app-bar-nav-icon>
           </div>
-          <div v-if="props.leftRouting.length > 0">
-            <v-btn v-for="r in props.leftRouting">
+          <div v-if="leftRouting.length > 0">
+            <v-btn v-for="r in leftRouting">
               <RouterLink :to="{ name: r.namePath }" class="header-link-text"
                 :style="{ color: theme.current.value.colors.text_touchable }">{{
                   r.name }}</RouterLink>
@@ -52,13 +52,13 @@ watch(group, () => {
         <v-col cols="12" class="d-flex justify-center align-center">
           <v-toolbar-title class="text-h5 font-weight-bold text-center"
             :style="{ color: theme.current.value.colors.text_touchable }">
-            {{ props.title }}
+            {{ title }}
           </v-toolbar-title>
         </v-col>
 
         <div class="header-actions-right">
-          <div v-if="props.rightRouting.length > 0">
-            <v-btn v-for="r in props.rightRouting">
+          <div v-if="rightRouting.length > 0">
+            <v-btn v-for="r in rightRouting">
               <RouterLink :to="{ name: r.namePath }" class="header-link-text"
                 :style="{ color: theme.current.value.colors.text_touchable }">{{
                   r.name }}</RouterLink>
@@ -72,10 +72,10 @@ watch(group, () => {
       </v-row>
     </v-container>
   </v-toolbar>
-  <div v-if="props.drawerItems.length > 0">
+  <div v-if="drawerItems.length > 0">
     <v-navigation-drawer v-model="drawer" location="left" temporary style="margin-top: 60px;">
       <v-list>
-        <div v-for="item in props.drawerItems">
+        <div v-for="item in drawerItems">
           <div v-if="item.name">
             <v-list-item @click="() => { item.onClick(); drawer = false }">
               <v-list-item-title>{{ item.name }}</v-list-item-title>

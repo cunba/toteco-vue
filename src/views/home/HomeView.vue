@@ -3,7 +3,7 @@ import HeaderView from '@/components/header/HeaderView.vue';
 import { ErrorResponseData, UserData } from '@/data/models';
 import { ROUTES, logout } from '@/infrastructure/router';
 import { ref } from 'vue';
-import PublicationCard from './components/publication/PublicationCard.vue';
+import PublicationCard from '@/components/publication/PublicationCard.vue';
 import { initPublications } from './HomeViewModel';
 
 const isLoading = ref(true)

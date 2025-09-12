@@ -8,6 +8,7 @@ export function initPublications(isLoading: Ref<boolean, boolean>) {
     const { t } = useI18n()
     const theme = useTheme()
     const publications = ref()
+    const dialog = ref(false)
 
     onMounted(async () => {
         const res = await new PublicationsRepository().getAll()
@@ -31,5 +32,5 @@ export function initPublications(isLoading: Ref<boolean, boolean>) {
         isLoading.value = false
     })
 
-    return { publications, t, theme, isLoading }
+    return { publications, t, theme, isLoading, dialog }
 }

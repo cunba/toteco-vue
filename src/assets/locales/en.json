@@ -39,6 +39,8 @@
     "sign_up.error.passwords_not_equal": "The passwords not match",
 
     "profile.title": "Profile",
+    "profile.publications_number": "Publications",
+    "profile.money_spent": "Money spent",
 
     "create_publication.title": "Create publication",
     

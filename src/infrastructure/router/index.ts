@@ -3,6 +3,7 @@ import CreateEstablishmentView from "@/views/createEstablisment/CreateEstablishm
 import EstablishmentsView from "@/views/establishments/EstablishmentsView.vue";
 import HomeView from "@/views/home/HomeView.vue";
 import LoginView from "@/views/login/LoginView.vue";
+import ProfileView from "@/views/profile/ProfileView.vue";
 import SignUpView from "@/views/sign_up/SignUpView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -47,6 +48,11 @@ const router = createRouter({
             path: '/establishments/create',
             name: ROUTES.CREATE_ESTABLISHMENT,
             component: CreateEstablishmentView
+        },
+        {
+            path: '/user/profile',
+            name: ROUTES.PROFILE,
+            component: ProfileView
         }
     ]
 })

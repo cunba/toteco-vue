@@ -44,11 +44,11 @@ async function toggleCard() {
         <v-card-title>
             <v-row class="w-100" align="center" justify="space-between">
                 <v-col cols="auto">
-                    <span class="text-h6">🍽️ {{ props.establishment.name }}</span>
+                    <span class="text-h6">🍽️ {{ establishment.name }}</span>
                 </v-col>
                 <v-col cols="auto">
                     <v-chip :color="theme.current.value.colors.background_second" variant="elevated">{{
-                        props.establishment.score }}/5 ⭐️</v-chip>
+                        establishment.score }}/5 ⭐️</v-chip>
                 </v-col>
             </v-row>
         </v-card-title>
