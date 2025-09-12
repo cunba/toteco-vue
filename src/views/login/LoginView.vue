@@ -2,6 +2,7 @@
 import HeaderView from '@/components/header/HeaderView.vue';
 import { ref } from 'vue';
 import { handleLogin, init } from './LoginViewModel';
+import { ROUTES } from '@/infrastructure/router';
 
 const { t, theme } = init()
 
@@ -16,9 +17,9 @@ const login = () => handleLogin(isLoading, username.value, password.value, error
 <template>
     <v-app :style="{ backgroundColor: theme.current.value.colors.background, color: theme.current.value.colors.text }">
         <HeaderView :title="''" :left-routing="[
-            { url: '/home', name: t('home.title') }
+            { namePath: ROUTES.HOME, name: t('home.title') }
         ]" :right-routing="[
-            { url: '/sign_up', name: t('sign_up') }
+            { namePath: ROUTES.SIGN_UP, name: t('sign_up') }
         ]" :drawer-items="[]" />
         <v-main>
             <v-container fluid class="fill-height d-flex justify-center align-center" width="600">

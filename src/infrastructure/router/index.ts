@@ -1,4 +1,5 @@
 import type { UserData } from "@/data/models";
+import EstablishmentsView from "@/views/establishments/EstablishmentsView.vue";
 import HomeView from "@/views/home/HomeView.vue";
 import LoginView from "@/views/login/LoginView.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -29,6 +30,11 @@ const router = createRouter({
             path: '/login',
             name: ROUTES.LOGIN,
             component: LoginView
+        },
+        {
+            path: '/establishments',
+            name: ROUTES.ESTABLISHMENTS,
+            component: EstablishmentsView
         }
     ]
 })

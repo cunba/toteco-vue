@@ -19,7 +19,7 @@ export interface HeaderProps {
 }
 
 export interface HeaderRouting {
-  url: string,
+  namePath: string,
   name: string
 }
 
@@ -42,7 +42,7 @@ watch(group, () => {
           </div>
           <div v-if="props.leftRouting.length > 0">
             <v-btn v-for="r in props.leftRouting">
-              <RouterLink :to="r.url" class="header-link-text"
+              <RouterLink :to="r.namePath" class="header-link-text"
                 :style="{ color: theme.current.value.colors.text_touchable }">{{
                   r.name }}</RouterLink>
             </v-btn>
@@ -59,7 +59,7 @@ watch(group, () => {
         <div class="header-actions-right">
           <div v-if="props.rightRouting.length > 0">
             <v-btn v-for="r in props.rightRouting">
-              <RouterLink :to=r.url class="header-link-text"
+              <RouterLink :to=r.namePath class="header-link-text"
                 :style="{ color: theme.current.value.colors.text_touchable }">{{
                   r.name }}</RouterLink>
             </v-btn>
