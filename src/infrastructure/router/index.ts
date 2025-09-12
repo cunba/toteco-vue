@@ -2,6 +2,7 @@ import type { UserData } from "@/data/models";
 import EstablishmentsView from "@/views/establishments/EstablishmentsView.vue";
 import HomeView from "@/views/home/HomeView.vue";
 import LoginView from "@/views/login/LoginView.vue";
+import SignUpView from "@/views/sign_up/SignUpView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 export enum ROUTES {
@@ -35,6 +36,11 @@ const router = createRouter({
             path: '/establishments',
             name: ROUTES.ESTABLISHMENTS,
             component: EstablishmentsView
+        },
+        {
+            path: '/sign_up',
+            name: ROUTES.SIGN_UP,
+            component: SignUpView
         }
     ]
 })
