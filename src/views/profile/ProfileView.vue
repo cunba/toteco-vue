@@ -10,7 +10,7 @@ import PublicationCard from '@/components/publication/PublicationCard.vue'
 
 const isLoading = ref(true)
 const user = JSON.parse(localStorage.getItem('user')!) as UserData
-const { publications, t, theme, dialog } = initPublications(isLoading)
+const { publications, t, theme, dialog } = initPublications(isLoading, user)
 const publication = ref()
 </script>
 

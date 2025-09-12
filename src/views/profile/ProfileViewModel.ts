@@ -1,17 +1,17 @@
-import { ErrorResponseData, PublicationData } from '@/data/models';
+import { ErrorResponseData, PublicationData, UserData } from '@/data/models';
 import { PublicationsRepository } from '@/data/repository/impl/PublicationsRepository';
 import { onMounted, ref, type Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useTheme } from 'vuetify';
 
-export function initPublications(isLoading: Ref<boolean, boolean>) {
+export function initPublications(isLoading: Ref<boolean, boolean>, user: UserData) {
     const { t } = useI18n()
     const theme = useTheme()
     const publications = ref()
     const dialog = ref(false)
 
     onMounted(async () => {
-        const res = await new PublicationsRepository().getAll()
+        const res = await new PublicationsRepository().getByUser(user.id)
         if (res !== undefined && !(res instanceof ErrorResponseData))
             publications.value = res.map(
                 (item) =>
