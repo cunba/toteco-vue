@@ -1,5 +1,7 @@
+import { Configuration, EstablishmentsApi, LoginApi, ProductsApi, PublicationsApi, UsersApi } from '@/client';
 import { ErrorResponseData, LoginRequestData } from '@/data/models';
 import { LoginRepository } from '@/data/repository/impl/LoginRepository';
+import ApiClient, { Api } from '@/infrastructure/data/ApiClient';
 import router, { ROUTES } from '@/infrastructure/router';
 import type { Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -31,6 +33,12 @@ export async function handleLogin(isLoading: Ref<boolean, boolean>, username: st
             localStorage.setItem('credentials', JSON.stringify(credentials))
             localStorage.setItem('user', JSON.stringify(res.user))
             localStorage.setItem('isLogged', 'true')
+
+            ApiClient.register(Api.EstablishmentsApi, new EstablishmentsApi(new Configuration({ basePath: 'http://localhost:5540', accessToken: res.token })))
+            ApiClient.register(Api.LoginApi, new LoginApi(new Configuration({ basePath: 'http://localhost:5540', accessToken: res.token })))
+            ApiClient.register(Api.ProductsApi, new ProductsApi(new Configuration({ basePath: 'http://localhost:5540', accessToken: res.token })))
+            ApiClient.register(Api.PublicationsApi, new PublicationsApi(new Configuration({ basePath: 'http://localhost:5540', accessToken: res.token })))
+            ApiClient.register(Api.UsersApi, new UsersApi(new Configuration({ basePath: 'http://localhost:5540', accessToken: res.token })))
             router.push({ name: ROUTES.HOME })
         }
     } catch (e) {

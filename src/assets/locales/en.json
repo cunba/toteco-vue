@@ -5,6 +5,7 @@
     "logout": "Log out",
     "yes": "Yes",
     "no": "No",
+    "select": "Select",
 
     "home.title": "Home",
     "home.no_data": "No data",
@@ -43,6 +44,9 @@
     "profile.money_spent": "Money spent",
 
     "create_publication.title": "Create publication",
+    "create_publication.image.label": "Select an image",
+    "create_publication.establishment.label": "Select establishment",
+    "create_publication.products.label": "Products",
     
     "create_establishment.title": "Create establishment",
     "create_establishment.name.label": "Name",

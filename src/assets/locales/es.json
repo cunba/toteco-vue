@@ -5,6 +5,7 @@
     "logout": "Cerrar sesión",
     "yes": "Sí",
     "no": "No",
+    "select": "Selecciona",
 
     "home.title": "Home",
     "home.no_data": "No hay datos",
@@ -43,6 +44,9 @@
     "profile.money_spent": "Dinero gastado",
 
     "create_publication.title": "Crear publicación",
+    "create_publication.image.label": "Selecciona una imagen",
+    "create_publication.establishment.label": "Selecciona el establecimiento",
+    "create_publication.products.label": "Productos",
     
     "create_establishment.title": "Crear establecimiento",
     "create_establishment.name.label": "Nombre",

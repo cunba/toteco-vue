@@ -1,5 +1,6 @@
 import type { UserData } from "@/data/models";
 import CreateEstablishmentView from "@/views/createEstablisment/CreateEstablishmentView.vue";
+import CreatePublicationView from "@/views/createPublication/CreatePublicationView.vue";
 import EstablishmentsView from "@/views/establishments/EstablishmentsView.vue";
 import HomeView from "@/views/home/HomeView.vue";
 import LoginView from "@/views/login/LoginView.vue";
@@ -53,6 +54,11 @@ const router = createRouter({
             path: '/user/profile',
             name: ROUTES.PROFILE,
             component: ProfileView
+        },
+        {
+            path: '/publications/create',
+            name: ROUTES.CREATE_PUBLICATION,
+            component:CreatePublicationView
         }
     ]
 })
