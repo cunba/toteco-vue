@@ -12,6 +12,7 @@ import ApiClient, { Api } from './infrastructure/data/ApiClient'
 import i18n from './infrastructure/plugins/i18n'
 import vuetify from './infrastructure/plugins/themes/index'
 import router from './infrastructure/router'
+import '@mdi/font/css/materialdesignicons.css'
 
 // TOTECO API
 ApiClient.register(Api.EstablishmentsApi, new EstablishmentsApi(new Configuration({ basePath: 'http://localhost:5540', accessToken: undefined })))

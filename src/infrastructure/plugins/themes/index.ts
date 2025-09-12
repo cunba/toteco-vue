@@ -3,11 +3,19 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import 'vuetify/styles'
 import { PALLET } from '../../../config/Colors'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 const vuetify = createVuetify({
     ssr: true,
     components,
     directives,
+    icons: {
+        defaultSet: 'mdi',
+        aliases,
+        sets: {
+            mdi,
+        }
+    },
     theme: {
         defaultTheme: 'light',
         themes: {

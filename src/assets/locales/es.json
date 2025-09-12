@@ -2,6 +2,7 @@
     "login": "Inicio sesión",
     "sign_up": "Registro",
     "loading": "Cargando...",
+    "logout": "Cerrar sesión",
 
     "home.title": "Home",
     "home.no_data": "No hay datos",
@@ -12,5 +13,13 @@
     "login.title": "Inicio de sesión",
     "login.button": "Iniciar sesión",
     "login.username.label": "Nombre de usuario",
-    "login.password.label": "Contraseña"
+    "login.password.label": "Contraseña",
+    "login.error.username": "El nombre de usuario es obligatorio",
+    "login.error.password": "La contraseña es obligatoria",
+
+    "profile.title": "Perfil",
+
+    "create_publication.title": "Crear publicación",
+    
+    "create_establishment.title": "Crear establecimiento"
 }

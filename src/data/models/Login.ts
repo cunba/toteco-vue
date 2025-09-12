@@ -1,4 +1,5 @@
 import type { LoginRequest, LoginResponse } from "@/client";
+import type { UserData } from "./User";
 
 export class LoginRequestData implements LoginRequest {
 
@@ -12,7 +13,11 @@ export class LoginRequestData implements LoginRequest {
 }
 
 export class LoginResponseData implements LoginResponse {
-    constructor(public token: string) {
+    constructor(
+        public token: string,
+        public user?: UserData
+    ) {
         this.token = token
+        this.user = user
     }
 }

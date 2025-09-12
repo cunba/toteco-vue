@@ -1,23 +1,34 @@
 <script setup lang="ts">
 import HeaderView from '@/components/header/HeaderView.vue';
-import { ErrorResponseData } from '@/data/models';
+import { ErrorResponseData, UserData } from '@/data/models';
+import { ROUTES } from '@/infrastructure/router';
 import { ref } from 'vue';
 import PublicationCard from './components/publication/PublicationCard.vue';
-import { initPublications } from './HomeViewModel';
+import { initPublications, logout } from './HomeViewModel';
 
 const isLoading = ref(true)
+const isLogged = ref(localStorage.getItem('isLogged'))
+let user = undefined
+if (isLogged.value === 'true') user = JSON.parse(localStorage.getItem('user')!) as UserData
 
 const { publications, t, theme } = initPublications(isLoading)
+
 </script>
 
 <template>
     <v-app :style="{ backgroundColor: theme.current.value.colors.background, color: theme.current.value.colors.text }">
-        <HeaderView :title="t('home.title').toUpperCase()" :left-routing="[
-            {url: '/establishments', name: t('establishments.title')}
-        ]" :right-routing="[
+        <HeaderView :title="t('home.title').toUpperCase()" :left-routing="isLogged !== null && isLogged === 'true' ? [] : [
+            { url: '/establishments', name: t('establishments.title') }
+        ]" :right-routing="isLogged !== null && isLogged === 'true' ? [] : [
             { url: '/login', name: t('login') },
             { url: '/sign_up', name: t('sign_up') }
-        ]" />
+        ]" :drawer-items="isLogged !== null && isLogged === 'true' ? [
+            { name: t('establishments.title'), onClick: () => $router.push(ROUTES.ESTABLISHMENTS) },
+            { name: t('create_publication.title'), onClick: () => $router.push(ROUTES.CREATE_PUBLICATION) },
+            isLogged === 'true' && user!.role === 'ADMIN' ? { name: t('create_establishment.title'), onClick: () => $router.push(ROUTES.CREATE_ESTABLISHMENT) } : {},
+            { name: t('profile.title'), onClick: () => $router.push(ROUTES.PROFILE) },
+            { name: t('logout'), onClick: logout }
+        ] : []" />
         <v-main>
             <v-container>
                 <v-row v-if="isLoading" justify="center" align="center" style="height: 300px;">

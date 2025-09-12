@@ -10,7 +10,7 @@ const password = ref('')
 const isLoading = ref(false)
 const errors = ref<{ username?: string; password?: string }>({})
 
-const login = () => handleLogin(isLoading, username.value, password.value, errors)
+const login = () => handleLogin(isLoading, username.value, password.value, errors, t)
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const login = () => handleLogin(isLoading, username.value, password.value, error
             { url: '/home', name: t('home.title') }
         ]" :right-routing="[
             { url: '/sign_up', name: t('sign_up') }
-        ]" />
+        ]" :drawer-items="[]" />
         <v-main>
             <v-container fluid class="fill-height d-flex justify-center align-center" width="600">
                 <v-card class="pa-6" width="500" height="350" elevation="4">

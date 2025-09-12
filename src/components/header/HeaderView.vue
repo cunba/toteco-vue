@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useTheme } from 'vuetify';
 
@@ -13,13 +14,21 @@ function toggleTheme() {
 export interface HeaderProps {
   title: string,
   leftRouting: HeaderRouting[],
-  rightRouting: HeaderRouting[]
+  rightRouting: HeaderRouting[],
+  drawerItems: any
 }
 
 export interface HeaderRouting {
   url: string,
   name: string
 }
+
+const drawer = ref(false)
+const group = ref(null)
+
+watch(group, () => {
+  drawer.value = false
+})
 </script>
 
 <template>
@@ -27,6 +36,10 @@ export interface HeaderRouting {
     <v-container fluid>
       <v-row align="center" class="h-100">
         <div class="header-actions-left">
+          <div v-if="props.drawerItems.length > 0">
+            <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"
+              :color="theme.current.value.colors.text_touchable"></v-app-bar-nav-icon>
+          </div>
           <div v-if="props.leftRouting.length > 0">
             <v-btn v-for="r in props.leftRouting">
               <RouterLink :to="r.url" class="header-link-text"
@@ -55,9 +68,23 @@ export interface HeaderRouting {
             {{ theme.global.current.value.dark ? '☀️' : '🌙' }}
           </v-btn>
         </div>
+
       </v-row>
     </v-container>
   </v-toolbar>
+  <div v-if="props.drawerItems.length > 0">
+    <v-navigation-drawer v-model="drawer" location="left" temporary style="margin-top: 60px;">
+      <v-list>
+        <div v-for="item in props.drawerItems">
+          <div v-if="item.name">
+            <v-list-item @click="() => { item.onClick(); drawer = false }">
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item>
+          </div>
+        </div>
+      </v-list>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -2,6 +2,7 @@
     "login": "Login",
     "sign_up": "Sign up",
     "loading": "Loading...",
+    "logout": "Log out",
 
     "home.title": "Home",
     "home.no_data": "No data",
@@ -12,5 +13,13 @@
     "login.title": "Login",
     "login.button": "Login",
     "login.username.label": "Username",
-    "login.password.label": "Password"
+    "login.password.label": "Password",
+    "login.error.username": "Username is required",
+    "login.error.password": "Password is required",
+
+    "profile.title": "Profile",
+
+    "create_publication.title": "Create publication",
+    
+    "create_establishment.title": "Create establishment"
 }
