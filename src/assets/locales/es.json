@@ -3,6 +3,8 @@
     "sign_up": "Registro",
     "loading": "Cargando...",
     "logout": "Cerrar sesión",
+    "yes": "Sí",
+    "no": "No",
 
     "home.title": "Home",
     "home.no_data": "No hay datos",
@@ -40,5 +42,12 @@
 
     "create_publication.title": "Crear publicación",
     
-    "create_establishment.title": "Crear establecimiento"
+    "create_establishment.title": "Crear establecimiento",
+    "create_establishment.name.label": "Nombre",
+    "create_establishment.isOpen.label": "Está abierto?",
+    "create_establishment.location.label": "Coordenadas",
+    "create_establishment.error.name": "El nombre es obligatorio",
+    "create_establishment.error.isOpen": "Está abierto es obligatorio",
+    "create_establishment.error.location": "Las coordenadas son obligatorias",
+    "create_establishment.button": "Crear"
 }

@@ -31,7 +31,7 @@ export async function handleLogin(isLoading: Ref<boolean, boolean>, username: st
             localStorage.setItem('credentials', JSON.stringify(credentials))
             localStorage.setItem('user', JSON.stringify(res.user))
             localStorage.setItem('isLogged', 'true')
-            router.push(ROUTES.HOME)
+            router.push({ name: ROUTES.HOME })
         }
     } catch (e) {
         console.log(e)

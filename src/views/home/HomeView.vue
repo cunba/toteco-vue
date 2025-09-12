@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import HeaderView from '@/components/header/HeaderView.vue';
 import { ErrorResponseData, UserData } from '@/data/models';
-import { ROUTES } from '@/infrastructure/router';
+import { ROUTES, logout } from '@/infrastructure/router';
 import { ref } from 'vue';
 import PublicationCard from './components/publication/PublicationCard.vue';
-import { initPublications, logout } from './HomeViewModel';
+import { initPublications } from './HomeViewModel';
 
 const isLoading = ref(true)
 const isLogged = ref(localStorage.getItem('isLogged'))
@@ -23,10 +23,10 @@ const { publications, t, theme } = initPublications(isLoading)
             { namePath: ROUTES.LOGIN, name: t('login') },
             { namePath: ROUTES.SIGN_UP, name: t('sign_up') }
         ]" :drawer-items="isLogged !== null && isLogged === 'true' ? [
-            { name: t('establishments.title'), onClick: () => $router.push(ROUTES.ESTABLISHMENTS) },
-            { name: t('create_publication.title'), onClick: () => $router.push(ROUTES.CREATE_PUBLICATION) },
-            isLogged === 'true' && user!.role === 'ADMIN' ? { name: t('create_establishment.title'), onClick: () => $router.push(ROUTES.CREATE_ESTABLISHMENT) } : {},
-            { name: t('profile.title'), onClick: () => $router.push(ROUTES.PROFILE) },
+            { name: t('establishments.title'), onClick: () => $router.push({ name: ROUTES.ESTABLISHMENTS }) },
+            { name: t('create_publication.title'), onClick: () => $router.push({ name: ROUTES.CREATE_PUBLICATION }) },
+            isLogged === 'true' && user!.role === 'ADMIN' ? { name: t('create_establishment.title'), onClick: () => $router.push({ name: ROUTES.CREATE_ESTABLISHMENT }) } : {},
+            { name: t('profile.title'), onClick: () => $router.push({ name: ROUTES.PROFILE }) },
             { name: t('logout'), onClick: logout }
         ] : []" />
         <v-main>

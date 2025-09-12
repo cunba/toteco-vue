@@ -1,4 +1,5 @@
 import type { UserData } from "@/data/models";
+import CreateEstablishmentView from "@/views/createEstablisment/CreateEstablishmentView.vue";
 import EstablishmentsView from "@/views/establishments/EstablishmentsView.vue";
 import HomeView from "@/views/home/HomeView.vue";
 import LoginView from "@/views/login/LoginView.vue";
@@ -41,6 +42,11 @@ const router = createRouter({
             path: '/sign_up',
             name: ROUTES.SIGN_UP,
             component: SignUpView
+        },
+        {
+            path: '/establishments/create',
+            name: ROUTES.CREATE_ESTABLISHMENT,
+            component: CreateEstablishmentView
         }
     ]
 })
@@ -56,5 +62,13 @@ router.beforeEach((to, from, next) => {
     } else if (!routesNotAuthenticated.includes(to.path) && (isLogged === null || isLogged === 'false')) next({ name: ROUTES.LOGIN })
     else next()
 })
+
+export function logout() {
+    localStorage.removeItem('token')
+    localStorage.removeItem('credentials')
+    localStorage.removeItem('user')
+    localStorage.setItem('isLogged', 'false')
+    router.go(0)
+}
 
 export default router

@@ -3,6 +3,8 @@
     "sign_up": "Sign up",
     "loading": "Loading...",
     "logout": "Log out",
+    "yes": "Yes",
+    "no": "No",
 
     "home.title": "Home",
     "home.no_data": "No data",
@@ -40,5 +42,14 @@
 
     "create_publication.title": "Create publication",
     
-    "create_establishment.title": "Create establishment"
+    "create_establishment.title": "Create establishment",
+    "create_establishment.name.label": "Name",
+    "create_establishment.isOpen.label": "Is open?",
+    "create_establishment.latitude.label": "Latutude",
+    "create_establishment.longitude.label": "Longitude",
+    "create_establishment.error.name": "Name is required",
+    "create_establishment.error.isOpen": "Is open is required",
+    "create_establishment.error.latitude": "Latitude is required",
+    "create_establishment.error.longitude": "Longitude is required",
+    "create_establishment.button": "Create"
 }

@@ -34,11 +34,3 @@ export function initPublications(isLoading: Ref<boolean, boolean>) {
 
     return { publications, t, theme, isLoading }
 }
-
-export function logout() {
-    localStorage.removeItem('token')
-    localStorage.removeItem('credentials')
-    localStorage.removeItem('user')
-    localStorage.setItem('isLogged', 'false')
-    router.go(0)
-}

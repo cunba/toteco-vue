@@ -23,10 +23,10 @@ const { establishments, t, theme } = initEstablishments(isLoading)
             { namePath: ROUTES.LOGIN, name: t('login') },
             { namePath: ROUTES.SIGN_UP, name: t('sign_up') }
         ]" :drawer-items="isLogged !== null && isLogged === 'true' ? [
-            { name: t('establishments.title'), onClick: () => $router.push(ROUTES.ESTABLISHMENTS) },
-            { name: t('create_publication.title'), onClick: () => $router.push(ROUTES.CREATE_PUBLICATION) },
-            isLogged === 'true' && user!.role === 'ADMIN' ? { name: t('create_establishment.title'), onClick: () => $router.push(ROUTES.CREATE_ESTABLISHMENT) } : {},
-            { name: t('profile.title'), onClick: () => $router.push(ROUTES.PROFILE) },
+            { name: t('establishments.title'), onClick: () => $router.push({ name: ROUTES.ESTABLISHMENTS }) },
+            { name: t('create_publication.title'), onClick: () => $router.push({ name: ROUTES.CREATE_PUBLICATION }) },
+            isLogged === 'true' && user!.role === 'ADMIN' ? { name: t('create_establishment.title'), onClick: () => $router.push({ name: ROUTES.CREATE_ESTABLISHMENT }) } : {},
+            { name: t('profile.title'), onClick: () => $router.push({ name: ROUTES.PROFILE }) },
             { name: t('logout'), onClick: logout }
         ] : []" />
         <v-main>

@@ -4,7 +4,7 @@ import router, { ROUTES } from '@/infrastructure/router'
 import { type Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'vuetify'
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 export function init() {
     const { t } = useI18n()
@@ -51,7 +51,7 @@ export async function handleSignUp(isLoading: Ref<boolean, boolean>, form: any, 
         const res = await new UsersRepository().save(user)
         if (res !== undefined && !(res instanceof ErrorResponseData)) {
             console.log(res)
-            router.push(ROUTES.LOGIN)
+            router.push({ name: ROUTES.LOGIN })
         }
     } catch (e) {
         console.log(e)
