@@ -11,10 +11,10 @@ export class LoginRepository extends ApiBaseRepository<ILoginApi> {
 
     async login(loginRequest: LoginRequestData) {
         try {
-            const client = await this.apiClient
+            const client = this.apiClient
             const result = await client!.login(loginRequest)
             return result.data
-        } catch (e) {
+        } catch (e: any) {
             throw e
         }
     }

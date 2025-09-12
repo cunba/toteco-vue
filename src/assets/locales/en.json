@@ -7,5 +7,10 @@
     "home.no_data": "No data",
     "home.no_data.message": "Come back later or add your first publication 🍝",
 
-    "establishments.title": "Establishments"
+    "establishments.title": "Establishments",
+
+    "login.title": "Login",
+    "login.button": "Login",
+    "login.username.label": "Username",
+    "login.password.label": "Password"
 }

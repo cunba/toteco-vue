@@ -7,5 +7,10 @@
     "home.no_data": "No hay datos",
     "home.no_data.message": "Vuelve más tarde o añade tu primera publicación 🍝",
 
-    "establishments.title": "Establecimientos"
+    "establishments.title": "Establecimientos",
+
+    "login.title": "Inicio de sesión",
+    "login.button": "Iniciar sesión",
+    "login.username.label": "Nombre de usuario",
+    "login.password.label": "Contraseña"
 }

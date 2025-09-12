@@ -10,7 +10,7 @@ import App from './App.vue'
 import { Configuration, EstablishmentsApi, LoginApi, ProductsApi, PublicationsApi, UsersApi } from './client'
 import ApiClient, { Api } from './infrastructure/data/ApiClient'
 import i18n from './infrastructure/plugins/i18n'
-import vuetify from './infrastructure/plugins/vuetify/index'
+import vuetify from './infrastructure/plugins/themes/index'
 import router from './infrastructure/router'
 
 // TOTECO API

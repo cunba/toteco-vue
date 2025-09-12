@@ -1,6 +1,5 @@
 <template>
   <v-card class="mx-auto my-4 pa-4" width="800" max-height="640" elevation="6">
-    <!-- 🏷️ Título centrado verticalmente -->
     <v-row align="center" class="mb-2">
       <v-col>
         <v-card-title class="text-h4 font-weight-bold">
@@ -13,7 +12,6 @@
 
     <v-card-text>
       <v-row no-gutters>
-        <!-- 📸 Imagen -->
         <v-col cols="6">
           <v-img
             :src="publication.photo"
@@ -25,7 +23,6 @@
           />
         </v-col>
 
-        <!-- 📋 Lista scrolleable -->
         <v-col cols="6" class="px-4">
           <div class="d-flex flex-column justify-center align-center text-center" style="max-height: 400px; overflow-y: auto;">
             <v-list density="comfortable">
